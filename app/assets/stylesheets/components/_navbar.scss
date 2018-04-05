@@ -8,17 +8,30 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 40px;
 }
 
 /* Logo */
+.navbar-wagon-brand {
+  display: flex;
+  align-items: center;
+}
+
 .navbar-wagon-brand img {
   height: 50px;
+  margin-right: 10px;
 }
 
 .navbar-wagon-brand {
   font-family: $headers-font;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  color: $black;
+}
+
+.navbar-wagon-brand:hover {
+  text-decoration: none;
+  color: $black-light;
 }
 
 /* User Avatar */
@@ -39,15 +52,17 @@
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
+  font-family: $headers-font;
 }
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
-  font-size: 14px;
+  color: $black;
+  font-weight: bold;
+  font-size: 16px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $black-light;
   text-decoration: none;
 }
 
