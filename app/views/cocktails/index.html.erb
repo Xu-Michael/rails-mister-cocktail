@@ -1,6 +1,36 @@
-<h2 class="text-center">COCKTAILS TO ENJOY</h2>
+<h2 class="title text-center">COCKTAILS TO ENJOY</h2>
+<div class="row">
 <% @cocktails.each do |cocktail| %>
-  <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+  <div class="col-xs-12 col-sm-4">
+    <div class="wrapper">
+      <div class="card-container">
+        <div class="top"></div>
+        <div class="bottom">
+          <div class="left">
+            <div class="details">
+              <h1><%= cocktail.name %></h1>
+            </div>
+            <div class="buy"><i class="fas fa-vial"></i></div>
+          </div>
+          <div class="right">
+            <div class="done"><i class="material-icons">done</i></div>
+            <div class="details">
+              <!-- <h1>Chair</h1>
+              <p>Added to your cart</p> -->
+            </div>
+            <div class="remove"><i class="material-icons">clear</i></div>
+          </div>
+        </div>
+      </div>
+      <div class="inside">
+        <div class="icon"><i class="material-icons">info_outline</i></div>
+        <div class="contents">
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
+</div>
 
-<%= link_to "Add new cocktail", new_cocktail_path, class: "btn btn-primary" %>
+
+<%= link_to "New Cocktail", new_cocktail_path, class: "btn btn-success" %>
