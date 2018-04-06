@@ -1,0 +1,11 @@
+<div class="ingredients-wrapper">
+  <h2 class="title text-center">MAGICAL INGREDIENTS</h2>
+  <%= image_tag "tube.svg", height: 65, class: "ingredient-icon" %>
+  <div class="row">
+    <% @ingredients.each do |ingredient| %>
+      <div class="col-sm-4 col-md-3">
+        <%= ingredient.name %>
+      </div>
+    <% end %>
+  </div>
+</div>
