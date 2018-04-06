@@ -1,14 +1,22 @@
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <% if @dose.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% @dose.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div id="container">
+  <h1>&bull; Cocktail &bull;</h1>
+  <div class="underline">
+  </div>
+  <div class="icon_wrapper">
+
+  </div>
+<!-- -->
+  <form action="#" method="post" id="contact_form">
+    <div class="name">
+      <label for="name"></label>
+      <input type="text" placeholder="description" name="name" id="name_input" required>
     </div>
-  <% end %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.submit "add dose", class: "btn btn-primary" %>
-<% end %>
+    <div class="email">
+      <label for="email"></label>
+      <input type="email" placeholder="My e-mail is" name="email" id="email_input" required>
+    </div>
+    <div class="submit">
+      <input type="submit" value="Send Message" id="form_button" />
+    </div>
+  </form><!-- // End form -->
+</div><!-- // End #container -->
