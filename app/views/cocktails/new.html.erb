@@ -9,6 +9,10 @@
     <div class="name">
       <%= f.input :name, placeholder: "Cocktail Name" %>
     </div>
+    <div class="select">
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>  
+    </div>
     <div class="submit" style="margin-top: 60px">
       <%= f.button :submit, class: "button button-white" %>
     </div>
