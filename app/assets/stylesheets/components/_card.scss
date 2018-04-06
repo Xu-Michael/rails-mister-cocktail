@@ -17,6 +17,7 @@
   .card-container{
     width:100%;
     height:100%;
+    background-color: $gray;
     .top{
       height: 80%;
       width:100%;
@@ -52,6 +53,7 @@
           padding: 20px;
           float: left;
           flex: 1 1 70%;
+          text-transform: uppercase;
         }
         .add{
           float:right;
