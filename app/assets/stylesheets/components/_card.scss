@@ -151,6 +151,15 @@
       li span{
         margin-left: 10px;
       }
+      .list-dose {
+        display: flex;
+        align-items: center;
+        a {
+          margin-top: -5px;
+          margin-left: 10px;
+          transition: color 0.5s;
+        }
+      }
     }
   }
 }
