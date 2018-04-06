@@ -31,7 +31,7 @@
             <h4>Ingredients:</h4>
             <ol>
               <% cocktail.doses.each do |dose| %>
-              <li><%= dose.description %> of <%= dose.ingredient.name %></li>
+              <li><span><%= dose.description %> of <%= dose.ingredient.name %></span></li>
               <% end %>
             </ol>
           </div>
