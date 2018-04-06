@@ -1,36 +1,43 @@
-<h2 class="title text-center">COCKTAILS TO ENJOY</h2>
-<div class="row">
-<% @cocktails.each do |cocktail| %>
-  <div class="col-xs-12 col-sm-4">
-    <div class="wrapper">
-      <div class="card-container">
-        <div class="top"></div>
-        <div class="bottom">
-          <div class="left">
-            <div class="details">
-              <h1><%= cocktail.name %></h1>
+<div class="index-wrapper">
+  <h2 class="title text-center">COCKTAILS TO ENJOY</h2>
+  <%= link_to new_cocktail_path, class: "button button-white button-index hidden-xs hidden-sm" do %>
+    <%= image_tag "add.svg", class: "add", height: 30 %>
+    New Cocktail
+  <% end %>
+  <%= link_to new_cocktail_path, class: "button-sm button-white button-index-sm hidden-lg hidden-md" do %>
+    <%= image_tag "add.svg", class: "add", height: 30 %>
+  <% end %>
+  <div class="row">
+  <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="wrapper">
+        <div class="card-container">
+          <div class="top"style="background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg) no-repeat center center"></div>
+          <div class="bottom">
+            <div class="left">
+              <div class="details">
+                <h3><%= cocktail.name %></h3>
+              </div>
+              <%= link_to new_cocktail_dose_path(cocktail), class: "add" do %>
+                <%= image_tag "tube.svg", height: 35 %>
+                <p>Add Dose</p>
+              <% end %>
             </div>
-            <div class="buy"><i class="fas fa-vial"></i></div>
-          </div>
-          <div class="right">
-            <div class="done"><i class="material-icons">done</i></div>
-            <div class="details">
-              <!-- <h1>Chair</h1>
-              <p>Added to your cart</p> -->
-            </div>
-            <div class="remove"><i class="material-icons">clear</i></div>
           </div>
         </div>
-      </div>
-      <div class="inside">
-        <div class="icon"><i class="material-icons">info_outline</i></div>
-        <div class="contents">
+        <div class="inside">
+          <div class="icon"><i class="material-icons">info_outline</i></div>
+          <div class="contents">
+            <h4>Ingredients:</h4>
+            <ul class="list-unstyled">
+              <% cocktail.doses.each do |dose| %>
+              <li><%= dose.description %> of <%= dose.ingredient.name %></li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
+  <% end %>
   </div>
-<% end %>
 </div>
-
-
-<%= link_to "New Cocktail", new_cocktail_path, class: "btn btn-success" %>
