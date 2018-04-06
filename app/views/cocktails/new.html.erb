@@ -1,13 +1,16 @@
-<%= simple_form_for (@cocktail) do |f| %>
-  <% if @cocktail.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% @cocktail.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div class="form-wrapper">
+  <h1>&bull; New Cocktail &bull;</h1>
+  <div class="underline">
+  </div>
+  <div class="icon_wrapper text-center">
+    <%= image_tag "cocktail.svg", height: 65 %>
+  </div>
+  <%= simple_form_for (@cocktail), id: "contact_form" do |f| %>
+    <div class="name">
+      <%= f.input :name, placeholder: "Cocktail Name" %>
+    </div>
+    <div class="submit" style="margin-top: 60px">
+      <%= f.button :submit, class: "button button-white" %>
     </div>
   <% end %>
-  <%= f.input :name %>
-  <%= f.submit "add cocktail", class: "btn btn-primary" %>
-<% end %>
+</div>

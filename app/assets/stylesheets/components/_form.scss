@@ -1,47 +1,20 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-html {
-  font-family: 'Montserrat', Arial, sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  background: #F2F3EB;
-}
-
-button {
-  overflow: visible;
-}
-
-button, select {
-  text-transform: none;
-}
-
-button, input, select, textarea {
-  color: #5A5A5A;
-  font: inherit;
-  margin: 0;
-}
-
-input {
-  line-height: normal;
-}
-
-textarea {
-  overflow: auto;
-}
-
-#container {
+.form-wrapper {
   border: solid 3px #474544;
+  border-radius: $border-radius;
   max-width: 768px;
   margin: 60px auto;
   position: relative;
+  background: white;
+  label {
+    display: none;
+  }
 }
 
 form {
   padding: 37.5px;
-  margin: 50px 0;
+  margin: 50px 0 0 0;
 }
 
 h1 {
@@ -60,7 +33,7 @@ h1 {
 }
 
 .icon_wrapper {
-  margin: 50px auto 0;
+  margin: 80px auto 0;
   width: 100%;
 }
 
@@ -72,10 +45,6 @@ h1 {
   width: 50px;
 }
 
-.email {
-  float: right;
-  width: 45%;
-}
 
 input[type='text'], [type='email'], select, textarea {
   background: none;
@@ -106,11 +75,17 @@ input[type='text']:focus, [type='email']:focus, textarea:focus {
   padding: 0 0 0.875em 0;
 }
 
+.name {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .message {
   float: none;
 }
 
-.name {
+.description {
   float: left;
   width: 45%;
 }
@@ -120,6 +95,7 @@ select {
   outline: none;
   -moz-appearance: none;
   -webkit-appearance: none;
+  border-radius: 0;
 }
 
 select::-ms-expand {
@@ -127,11 +103,13 @@ select::-ms-expand {
 }
 
 .subject {
-  width: 100%;
+  float: right;
+  width: 45%;
 }
 
-.telephone {
-  width: 100%;
+.submit {
+  display: flex;
+  justify-content: center;
 }
 
 textarea {

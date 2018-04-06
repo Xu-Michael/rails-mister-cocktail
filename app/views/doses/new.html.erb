@@ -1,22 +1,19 @@
-<div id="container">
-  <h1>&bull; Cocktail &bull;</h1>
+<div class="form-wrapper">
+  <h1>&bull; New Dose &bull;</h1>
   <div class="underline">
   </div>
-  <div class="icon_wrapper">
-
+  <div class="icon_wrapper text-center">
+    <%= image_tag "tube.svg", height: 65 %>
   </div>
-<!-- -->
-  <form action="#" method="post" id="contact_form">
-    <div class="name">
-      <label for="name"></label>
-      <input type="text" placeholder="description" name="name" id="name_input" required>
+  <%= simple_form_for [@cocktail, @dose], id: "contact_form" do |f| %>
+    <div class="description">
+      <%= f.input :description, placeholder: "Dose Amount" %>
     </div>
-    <div class="email">
-      <label for="email"></label>
-      <input type="email" placeholder="My e-mail is" name="email" id="email_input" required>
+    <div class="subject">
+      <%= f.association :ingredient, prompt: "Ingredient", id: "subject_input" %>
     </div>
-    <div class="submit">
-      <input type="submit" value="Send Message" id="form_button" />
+    <div class="submit" style="margin-top: 120px">
+      <%= f.button :submit, class: "button button-white" %>
     </div>
-  </form><!-- // End form -->
+  <% end %>
 </div><!-- // End #container -->
